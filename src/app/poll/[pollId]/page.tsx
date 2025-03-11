@@ -105,6 +105,7 @@ export default function PollPage() {
       setHasVoted(true);
     } catch (error) {
       // Type guard for the error
+      console.log(error);
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
 
@@ -229,7 +230,8 @@ export default function PollPage() {
             <PollVoteOptions
               options={poll.options}
               hasVoted={hasVoted}
-              hideResults={poll.hideResults && !isExpired}
+              showResults={hasVoted || !poll.hideResults}
+              hideResults={poll.hideResults}
               onVote={handleVote}
               totalVotes={totalVotes}
               onAlreadyVoted={handleAlreadyVoted}
