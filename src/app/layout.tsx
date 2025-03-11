@@ -15,9 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VanishVote - Anonymous Polls that Disappear",
-  description: "Create anonymous polls that expire after a set time. No login required.",
+  title: "VanishVote - Anonymous Polls",
+  description: "Create anonymous polls that expire automatically",
   keywords: ["anonymous polls", "temporary polls", "voting", "survey", "expiring polls"],
+  icons: {
+    icon: "/vote.png",
+    apple: "/vote.png",
+  },
 };
 
 export default function RootLayout({
